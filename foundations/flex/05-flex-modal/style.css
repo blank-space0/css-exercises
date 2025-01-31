@@ -50,10 +50,12 @@ body {
   padding: 0;
 }
 
+/* buttons are inline, so they will be right next to each other*/
 button {
   cursor: pointer;
   padding: 8px 16px;
   border-radius: 8px;
+  display: inline;
 }
 
 button.continue {
@@ -67,3 +69,34 @@ button.cancel {
   border: 1px solid #ddd;
   color: royalblue;
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* 
+Modal is a flex box
+by default, flex-direction is set to row
+That means its children will be SIDE BY SIDE like block inline
+  */
+.modal {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+}
+
+/* Do this so the icon doesnt get smushed*/
+.icon {
+  flex-shrink: 0;
+}
+
+/* Seperates the main text from the bottom buttons*/
+.text {
+  margin-bottom: 16px;
+}
+

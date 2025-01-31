@@ -24,3 +24,78 @@ input {
   padding: 8px 24px;
   width: 400px;
 }
+
+/* SOLUTION */
+
+/*
+Set to flex-column so our header, content, and footer stack on each other 
+*/
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+Set top and bottom padding to 8 and 16 respectively 
+*/
+
+button {
+  padding: 8px 16px;
+}
+/*
+This is all the stuff between header and footer
+We convert to flexbox
+We then set direction to col so that the elements stack on top of ech otehr
+Then, we just center everything
+Flex 1 is saying -> Allow .content to expand and fill all available space in the parent container (body)
+Set gap so the items are spaced out a bit
+*/
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 
+This removes the underline on the links
+And also changes the color of the links
+*/
+
+a {
+  color: #666;
+  text-decoration: none;
+}
+
+/* Make these flex boxes so we can seperate the left and right links to each side
+  With justify content space between
+  Add padding to make sure the text isnt too close edge*/
+.header,
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.footer {
+  background: #eee;
+}
+
+/* 
+Make the UL flex containers
+That way, the inner contents will be next to each other
+Also, we set margin and padding to 0 to remove defaults
+Then, put a small gap between the elements
+List style non removes the bullets
+
+*/
+
+ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 16px
+}

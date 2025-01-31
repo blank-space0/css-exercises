@@ -27,3 +27,103 @@ body {
   box-shadow: 2px 4px 16px rgba(0,0,0,.06);
   border-radius: 4px;
 }
+
+/* SOLUTION */
+
+/*
+Make the entire page a flexbox 
+this way we can push footer down and have body extend and fill gaps
+*/
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+some formatting/ alignment for the header
+make it a flexbox
+align text in the center
+make top/bottom padding=0 and left/right padding=16px
+then, just adjust font size and weight(boldness)
+*/
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-size: 32px;
+  font-weight: 900;
+}
+/*
+Make the body (the contents between header and footer
+a flexbox
+This lets the sidebar and the cards sit side by side
+Also, set flex to 1 so that it takes up all the avaialble space between header and footer
+*/
+
+.body {
+  flex: 1;
+  display: flex;
+}
+/* 
+Prevent the sidebar from shrinking and add padding
+*/
+.sidebar {
+  flex-shrink: 0;
+  padding: 16px;
+}
+
+/* 
+Removes the bullets from the list
+also removes the default margin and padding
+*/
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ adds space between each list element
+*/
+li {
+  margin-bottom: 16px;
+}
+
+/* 
+Remove the underline from links and change their font/color
+*/
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+/*
+this is the outer flex box (within the bod flexbox)
+ add padding so cards arent sitting on the top left edge, centers them a bit more
+ set flex-wrap so that the cards wrap around if we resize
+ set a gap so each flex item is spaced apart (the cards are spaced out)
+*/
+.container {
+  padding: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+/* 
+Sets padding so the text in the card is not right on the edges
+Sets width for the cards so they dont extend to the end of the page
+*/
+.card {
+  padding: 16px;
+  width: 300px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
